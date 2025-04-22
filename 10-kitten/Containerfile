@@ -2,6 +2,8 @@ FROM ghcr.io/imbev/almalinux-gnome:10-kitten
 
 COPY ../scripts /scripts
 
+RUN /scripts/os-info.sh
+
 RUN /scripts/lint.sh
 
 RUN /scripts/clean.sh
