@@ -4,6 +4,10 @@ COPY ../scripts /scripts
 
 RUN /scripts/os-info.sh
 
+RUN /scripts/gnome-shell-extensions.sh
+
+RUN /scripts/gnome-shell-titlebar.sh
+
 RUN /scripts/lint.sh
 
 RUN /scripts/clean.sh
