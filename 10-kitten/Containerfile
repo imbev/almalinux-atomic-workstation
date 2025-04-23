@@ -10,6 +10,8 @@ RUN /scripts/gnome-shell-titlebar.sh
 
 RUN /scripts/firewall.sh
 
+RUN /scripts/development-tools.sh
+
 RUN /scripts/lint.sh
 
 RUN /scripts/clean.sh
