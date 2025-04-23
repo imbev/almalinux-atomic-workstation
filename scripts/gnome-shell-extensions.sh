@@ -9,7 +9,7 @@ dnf install -y \
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.desktop.shell.workstation.gschema.override
 [org.gnome.shell]
-enabled-extensions=['background-logo@fedorahosted.org', 'appindicatorsupport@rgcjonas.gmail.com', 'ding@rastersoft.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx']
+enabled-extensions=['background-logo@fedorahosted.org', 'appindicatorsupport@rgcjonas.gmail.com', 'ding@rastersoft.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx']
 EOF
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.fedorahosted.background-logo-extension.workstation.gschema.override
