@@ -8,6 +8,8 @@ RUN /scripts/gnome-shell-extensions.sh
 
 RUN /scripts/gnome-shell-titlebar.sh
 
+RUN /scripts/mutable-dirs.sh
+
 RUN /scripts/firewall.sh
 
 RUN /scripts/development-tools.sh
