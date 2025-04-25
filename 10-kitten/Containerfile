@@ -16,6 +16,8 @@ RUN /scripts/development-tools.sh
 
 RUN /scripts/kernel-args.sh
 
+RUN /scripts/hardware-support.sh
+
 RUN /scripts/lint.sh
 
 RUN /scripts/clean.sh
