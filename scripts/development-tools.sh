@@ -3,4 +3,5 @@
 set -euo pipefail
 
 dnf install -y \
-    @"Development Tools"
+    @"Development Tools" \
+    distrobox
