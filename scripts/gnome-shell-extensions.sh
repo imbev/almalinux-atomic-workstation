@@ -4,8 +4,26 @@ set -euo pipefail
 
 dnf install -y \
     gnome-shell-extension-appindicator \
-    gnome-shell-extension-dash-to-dock \
-    gnome-shell-extension-desktop-icons
+    gnome-shell-extension-dash-to-dock
+
+curl -L \
+    -o ding.zip \
+    https://extensions.gnome.org/extension-data/dingrastersoft.com.v76.shell-extension.zip
+
+unzip \
+    ding.zip \
+    -d ding@rastersoft.com
+
+chmod a+r \
+    ding@rastersoft.com/metadata.json
+
+mv -f \
+    ding@rastersoft.com/schemas/* \
+    /usr/share/glib-2.0/schemas/
+
+mv \
+    ding@rastersoft.com \
+    /usr/share/gnome-shell/extensions/
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.desktop.shell.workstation.gschema.override
 [org.gnome.shell]
