@@ -29,5 +29,5 @@ jobs:
 
       - name: Build and push
         run: |
-          podman build -t quay.io/almalinux-atomic-workstation/almalinux-atomic-workstation:latest .
+          podman build -f 10-kitten/Containerfile -t quay.io/almalinux-atomic-workstation/almalinux-atomic-workstation:latest .
           podman push quay.io/almalinux-atomic-workstation/almalinux-atomic-workstation:latest
