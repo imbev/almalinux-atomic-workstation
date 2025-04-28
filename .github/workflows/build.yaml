@@ -31,4 +31,4 @@ jobs:
         run: |
           IMAGE_NAME=quay.io/almalinux-atomic-workstation/almalinux-atomic-workstation:latest
           make IMAGE_NAME=${IMAGE_NAME}
-          podman push ${IMAGE_NAME}
+          sudo podman push ${IMAGE_NAME}
