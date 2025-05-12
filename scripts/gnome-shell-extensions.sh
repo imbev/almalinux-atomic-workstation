@@ -4,6 +4,7 @@ set -euo pipefail
 
 dnf install -y \
     gnome-shell-extension-appindicator \
+    gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-dash-to-dock
 
 curl -L \
@@ -27,12 +28,32 @@ mv \
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.desktop.shell.workstation.gschema.override
 [org.gnome.shell]
-enabled-extensions=['background-logo@fedorahosted.org', 'appindicatorsupport@rgcjonas.gmail.com', 'ding@rastersoft.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'background-logo@fedorahosted.org', 'blur-my-shell@aunetx', 'dash-to-dock@micxgx.gmail.com', 'ding@rastersoft.com']
 EOF
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.fedorahosted.background-logo-extension.workstation.gschema.override
 [org.fedorahosted.background-logo-extension]
 logo-position='bottom-right'
+EOF
+
+cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.shell.extensions.dash-to-dock.workstation.gschema.override
+[org.gnome.shell.extensions.dash-to-dock]
+custom-theme-shrink=true
+dock-fixed=true
+dock-position='LEFT'
+extend-height=true
+running-indicator-style='DOTS'
+EOF
+
+cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.shell.extensions.blur-my-shell.dash-to-dock.workstation.gschema.override
+[org.gnome.shell.extensions.blur-my-shell.dash-to-dock]
+pipeline='pipeline_default'
+static-blur=false
+EOF
+
+cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.shell.extensions.blur-my-shell.panel.workstation.gschema.override
+[org.gnome.shell.extensions.blur-my-shell.panel]
+static-blur=false
 EOF
 
 glib-compile-schemas \
