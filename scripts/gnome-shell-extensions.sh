@@ -57,5 +57,13 @@ cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.shell.extensions.blur-my-
 static-blur=false
 EOF
 
+cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.shell.extensions.ding.workstation.gschema.override
+[org.gnome.shell.extensions.ding]
+show-home=false
+show-network-volumes=false
+show-trash=false
+show-volumes=false
+EOF
+
 glib-compile-schemas \
     /usr/share/glib-2.0/schemas/
