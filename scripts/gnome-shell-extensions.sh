@@ -29,6 +29,7 @@ mv \
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.gnome.desktop.shell.workstation.gschema.override
 [org.gnome.shell]
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'background-logo@fedorahosted.org', 'blur-my-shell@aunetx', 'dash-to-dock@micxgx.gmail.com', 'ding@rastersoft.com']
+favorite-apps=['firefox.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Ptyxis.desktop']
 EOF
 
 cat << EOF >> /usr/share/glib-2.0/schemas/10_org.fedorahosted.background-logo-extension.workstation.gschema.override
